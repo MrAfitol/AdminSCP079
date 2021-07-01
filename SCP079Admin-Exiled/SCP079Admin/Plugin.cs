@@ -13,7 +13,7 @@ namespace SCP079Admin
         public override string Name { get; } = "SCP079Admin";
         public override string Prefix { get; } = "scp079admin";
         public override System.Version RequiredExiledVersion { get; } = new System.Version(2, 10, 0);
-        public override System.Version Version { get; } = new System.Version(1, 0, 0);
+        public override System.Version Version { get; } = new System.Version(1, 0, 1);
 
         public override void OnEnabled()
         {

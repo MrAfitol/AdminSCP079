@@ -17,7 +17,7 @@ namespace SCP079Admin.Commands
 
         public string[] Aliases { get; } = new string[] { "a079" };
 
-        public string Description { get; } = "Summons an untruthful MTF/CI squad";
+        public string Description { get; } = "Admin command for SCP079";
 
         public bool Execute(ArraySegment<string> arguments, ICommandSender sender, out string response)
         {
@@ -31,17 +31,8 @@ namespace SCP079Admin.Commands
 
             if (arguments.Count != 2)
             {
-                response = "Usage: \nadmin079 energy <amount> \nadmin079 lvl <Tier 1 = 0 - Tier 3 = 2> \nadmin079 maxenr <amount> \nadmin079 xp <amount>";
+                response = "Usage: \nadmin079 energy <amount> \nadmin079 lvl <Tier 1 = 0 - Tier 5 = 4> \nadmin079 maxenr <amount> \nadmin079 xp <amount>";
                 return false;
-            }
-
-            foreach (Player Ply in Player.List)
-            {
-                if (Ply.Role != RoleType.Scp079)
-                {
-                    response = "You are not SCP-079 to use this command!";
-                    return false;
-                }
             }
 
             switch (arguments.At(0))
@@ -70,9 +61,9 @@ namespace SCP079Admin.Commands
                             return false;
                         }
 
-                        if (lvl > 2)
+                        if (lvl > 4)
                         {
-                            response = $"The number is out of range, use a number between 0 and 2";
+                            response = $"The number is out of range, use a number between 0 and 4";
                             return false;
                         }
 
